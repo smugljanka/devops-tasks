@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: app-frontend/Dockerfile
+    image: app/frontend
+    restart: always
+    container_name: app-frontend
+    stop_grace_period: 30s
+    volumes:
+      - type: bind
+        source: ./static
+        target: /var/www/static
+      - type: bind
+        source: ./www-data
+        target: /var/www/data
+    ports:
+      - "8080:8080"
