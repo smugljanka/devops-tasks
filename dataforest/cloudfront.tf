@@ -33,6 +33,4 @@ module "cdn" {
     compress        = true
     query_string    = true
   }
-
-  depends_on = [aws_s3_bucket.cf_frontend]
 }
