@@ -82,8 +82,8 @@ variable "timeouts" {
 #ALB/CloudFront settings
 variable "certificate_arn" {
   description = "The AWS ACM certificate ARN for an origin domain"
-  type    = string
-  default = "arn:aws:acm:eu-west-1:761554981765:certificate/9822dc38-cef8-4bd5-ab0e-f2c19da32b6c"
+  type        = string
+  default     = "arn:aws:acm:eu-west-1:761554981765:certificate/9822dc38-cef8-4bd5-ab0e-f2c19da32b6c"
 }
 
 variable "additional_certificate_arns" {

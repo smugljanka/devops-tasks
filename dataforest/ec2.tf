@@ -1,9 +1,9 @@
 locals {
   # Terraform/dataforest/files/user-data/init-ubuntu.sh
   base64_userdata = (
-          var.init_userdata
-          ? filebase64("${path.module}/files/user-data/init-ubuntu.sh")
-          : base64encode("")
+    var.init_userdata
+    ? filebase64("${path.module}/files/user-data/init-ubuntu.sh")
+    : base64encode("")
   )
 }
 

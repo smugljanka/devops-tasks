@@ -59,7 +59,7 @@ resource "aws_security_group" "pri_fe" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name =  "${var.project}-${var.env}-pri-fe-sg"
+    Name = "${var.project}-${var.env}-pri-fe-sg"
   }
 
   depends_on = [aws_vpc.main]
@@ -102,7 +102,7 @@ resource "aws_security_group" "pri_be" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name =  "${var.project}-${var.env}-pri-be-sg"
+    Name = "${var.project}-${var.env}-pri-be-sg"
   }
 
   depends_on = [aws_vpc.main]
@@ -135,7 +135,7 @@ resource "aws_security_group" "pri_db" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name =  "${var.project}-${var.env}-pri-db-sg"
+    Name = "${var.project}-${var.env}-pri-db-sg"
   }
 
   depends_on = [aws_vpc.main]

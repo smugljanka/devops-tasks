@@ -32,8 +32,8 @@ variable "vpc_cidr" {
 
 variable "single_nat_gateway" {
   description = "Whether to setup a single NAT GW for all AZs or a single one per AZ"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 locals {
