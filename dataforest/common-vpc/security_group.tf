@@ -75,6 +75,16 @@ resource "aws_security_group_rule" "pri_fe_inbound_alb" {
   source_security_group_id = aws_security_group.pub_lb.id
 }
 
+resource "aws_security_group_rule" "pri_fe_inbound_cf" {
+  security_group_id        = aws_security_group.pri_fe.id
+  description              = "Allow inbound traffic from Global Cloudfront"
+  type                     = "ingress"
+  from_port                = 8080
+  to_port                  = 8080
+  protocol                 = "http"
+  source_security_group_id = data.aws_prefix_list.cloudfront_global.id
+}
+
 resource "aws_security_group_rule" "pri_fe_outbound_be" {
   security_group_id = aws_security_group.pri_fe.id
   description       = "Allow outbound traffic to everywhere"
