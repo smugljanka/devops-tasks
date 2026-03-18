@@ -80,7 +80,8 @@ data "aws_iam_policy_document" "cf_frontend" {
       test     = "StringEquals"
       variable = "AWS:SourceArn"
       values = [
-        "arn:${data.aws_partition.current.partition}:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/*"
+        module.cdn.cloudfront_distribution_arn
+#        "arn:${data.aws_partition.current.partition}:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/*"
       ]
     }
   }
