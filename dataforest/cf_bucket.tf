@@ -27,9 +27,9 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "cf_frontend" {
 resource "aws_s3_bucket_public_access_block" "cf_frontend" {
 
   bucket              = aws_s3_bucket.cf_frontend.id
-  block_public_acls   = false
-  block_public_policy = false
-  ignore_public_acls  = false
+  block_public_acls   = true
+  block_public_policy = true
+  ignore_public_acls  = true
 }
 
 data "aws_iam_policy_document" "cf_frontend" {
